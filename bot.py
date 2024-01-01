@@ -39,6 +39,7 @@ async def process_admin_commands(message, user_message):
     elif user_message.startswith('!mute'):
         try:
             member_to_mute = message.mentions[0]
+            # Role ID is an ID number that can be obtained from your mute role in your discord server
             await member_to_mute.add_roles(message.guild.get_role(YOUR_ROLE_ID_GOES_HERE), reason="Muted by command")
             return 'User has been muted!'
 
